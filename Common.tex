@@ -2,12 +2,22 @@
 \label{ch:Common}
 
 This chapter details common information that all members of the Sweepstakes
-committee should be aware of.
+Committee should be aware of.
 
 \section{Google Drive}
-
+\label{sec:GDrive}
+Sweepstakes maintains a digital folder containing notes, documents,
+spreadsheets, images, and other useful items from many years past. Currently
+this folder is stored on Google Drive and will be referenced as such in this
+guidebook.
+\\\\
+The Sweepstakes Chairman should be the owner of this folder. If you are
+the Sweepstakes Chairman and the outgoing Chairman did not make you owner
+of the folder, you should yell at them until they do so. The information
+there will be invaluable to your success throughout the year.
 
 \section{Sweepstakes Brand}
+\label{sec:Brand}
 Sweepstakes is constantly scrutinized by many watchful eyes. Because of this,
 it is important for Sweepstakes to have a unified and consistent image that
 it presents to the world.
@@ -18,58 +28,131 @@ There have been many Sweepstakes logos throughout the years, with each year's
 committee creating their own unique image. It is the recommendation of this
 guide that Sweepstakes adopt a single logo for general-purpose use. The one in
 most prevalent use at the time of this writing is the Thorn logo, created by
-Daniel Kane. Give credit when possible, and remember that the font used is
-Futura.
-\\
+Daniel Kane. Give credit when possible, and remember that the font used when
+updating the year is Futura.
+\\\\
 Additional yearly logos may be created, but should be used in limited
 circumstances, such as in the Buggy Book or on yearly T-shirts or flyers.
 
 \subsection{Website}
 \label{subsec:Website}
 At the time of this writing, cmubuggy.org is the de facto official website for
-Buggy as a sport. This poses a number of potential problems.
+Buggy as a sport, maintained by the Buggy Alumni Association. This poses a
+number of potential problems.
 
 \begin{itemize}
 \item The important historical and logistical information stored there is
   not stored in any other location, thus if the website were to fail,
   the information would be lost.
 \item The website is not maintained by any official member of Sweepstakes.
-  Thus, the information could in inaccurate or incomplete.
+  Thus, the information there could be inaccurate or incomplete.
 \item There will not necessarily be consistent leadership in the BAA,
   which could cause fluctuations in the website's reliability.
 \end{itemize}
-
 
 For these reasons, it is important that each Sweepstakes committee makes
 an effort to keep the official Sweepstakes website up-to-date and to point
 spectators and participants to it whenever possible in favor of cmubuggy.org.
 This website is:
-\\
+\\\\
 www.cmu.edu/buggy
-\\
-\\
+\\\\
 The website can be easily edited on any Andrew cluster machine at the path
 \url{~buggy/www/Sweepstakes/}
-\\
+\\\\
 The Welcome.html file contains all basic information and should be updated
-every year at minimum to reflect changes in personnel, dates, etc.
-\\
-To publish updates to the web, go to https://www.andrew.cmu.edu/server/publish.html
-and enter the user ID ``buggy'' in the Personal Web Pages section. Click Publish.
+once per year at minimum to reflect changes in personnel, dates, etc.
+\\\\
+To publish updates to the web, go to
+\url{https://www.andrew.cmu.edu/server/publish.html}
+and enter the user ID ``buggy'' in the Personal Web Pages section.
+Click Publish.
 You should then see your changes reflected on the live website.
 
 \subsection{Titles}
 \label{subsec:Titles}
 There are certain mistakes consistently made when addressing Sweepstakes
-members, so for clarity here is an enumeration:
+members, and other words in Buggy, so for clarity here is an enumeration:
 
 \begin{itemize}
 \item Sweepstakes Chairman (not chairMEN. Chairmen is the plural of the word
 and is used to refer to the collective group made up of each team's chairman).
-\item Assistant Chairman (Ass Chair is acceptible, but not in official contexts).
+\item Assistant Chairman (Ass Chair is acceptable, but not in official
+  contexts).
 \item Safety Chairman
 \item Buggy Showcase Chair (this one is new, so just be consistent).
 \item Buggy Book Chair (no hyphen, buggy and book are two words).
-\item Sweepstakes Advisor (not adviser).
+\item Sweepstakes Advisor (not Adviser).
 \item Raceday (not Race Day. Not RaceDay. Not Race-day).
+\item Buggy with a capital 'B' refers to the sport as a whole.
+\item buggy with a lower-case 'b' refers to the actual vehicle.
 \end{itemize}
+
+\section{Updating This Guidebook}
+\label{sec:Updating}
+This Guidebook is exactly like the Sweepstakes Rules in that it is written in
+LaTex and stored in a Git repository.
+\\\\
+For the non-geeks, LaTex is a programming language used to create beautiful
+PDF documents. It's not very hard to learn, and mostly involves typing words,
+but it also has powerful features for when you need them.
+\\\\
+Git is free version control software. This means that all previously saved
+versions of this guidebook are safely stored online in case anyone makes a
+mistake or deletes something important.
+\\\\
+So, to update this Guidebook, first you will need to open up a terminal.
+On Mac and Linux computers there is an app called ``Terminal'' and on Windows
+PCs there is an app called PuTTY that is a free download.
+\\\\
+Once you have a terminal open, you need to connect to one of the Andrew
+machines. You can do this by typing ``ssh ID@unix.andrew.cmu.edu''
+where ID is your Andrew ID. It will prompt you for your password,
+which you should enter.
+\\\\
+Next you need to get your own copy of the Guidebook from Git for editing.
+Do this by typing
+
+``git checkout git@github.com:CMUBuggy/Guidebook.git guidebook''
+\\\\
+Hopefully this worked out and you now have an editable copy of the Guidebook
+in a folder called ``guidebook''. Go to that folder by typing ``cd guidebook''
+then type ``ls'' to see all the files that are inside that folder.
+\\\\
+The files are named after the chapters of the book, so pick the one you
+want to edit and open it by typing ``emacs CHAPTER.tex'' where CHAPTER is
+replaced with the name of the file you want to open.
+\\\\
+If you've never used emacs before, or if you have struggled with anything up
+to this point, go find a CS or ECE major and they should easily be able to
+help you. But hopefully it's obvious that you can just type where you want to
+edit the text, or scroll down using the arrow keys until you get to the place
+where you want to change something. When you're done, the command to save and
+quit in emacs is the following sequence:
+
+control-x control-s control-x control-c
+\\\\
+Once you have edited all the files you wish to edit, you need to create a PDF
+of the updated Guidebook. Do this by typing ``pdflatex guidebook.tex'' then
+hit Enter, Up Arrow Key, Enter to run this command twice and generate the
+table of contents.
+\\\\
+If, when you type this command there is a question mark at the bottom of
+the terminal, you have a syntax error. Type ``q'' and hit Enter and then
+go find out what you typed wrong. You might have to use Google for help here.
+\\\\
+If you want your changes to be saved by Git (which you do), you need
+to add all your changes by typing ``git commit -am PERSONAL MESSAGE''
+where PERSONAL MESSAGE is a message describing the changes that you made.
+The PERSONAL MESSAGE should be surrounded by quotation marks.
+\\\\
+Then type ``git push''
+\\\\
+Finally, you want to get the PDF you just created onto your personal computer
+so you can share it with the world! To do this, close the terminal window and
+open a new one. Then type
+
+``scp \url{ID@unix.andrew.cmu.edu:~/guidebook/guidebook.pdf} Desktop''
+\\\\
+This should copy the PDF from the Andrew machine to your Desktop. Open it up
+and enjoy!
